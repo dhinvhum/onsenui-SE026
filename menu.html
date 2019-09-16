@@ -1,0 +1,323 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Categories</title>
+
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsen/onsen-css-components.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <ons-navigator swipeable id="myNavigator" page="menu.html"></ons-navigator>
+
+    <template id="menu.html">
+        <ons-page id="menu">
+            <ons-toolbar>
+                <div class="center" id="toolbar-text"><b>foodfeed</b></div>
+                <div class="toolbar__right">
+                    <span class="toolbar-button" style="color: maroon; font-weight: bold;" onclick="logout()">logout</span>
+                </div>
+            </ons-toolbar>
+
+            <div style="padding-top: 12px; text-align: center;">
+                <a style="padding: 12px;"><label class="radio-button radio-button--material">
+                        <input type="radio" class="radio-button__input radio-button--material__input" name="r"
+                            checked="checked">
+                        <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                        Delivery
+                    </label></a>
+
+                <a style="padding: 12px;"><label class="radio-button radio-button--material">
+                        <input type="radio" class="radio-button__input radio-button--material__input" name="r">
+                        <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                        Pickup
+                    </label></a>
+            </div>
+
+            <div class="card" style="padding: 3px; margin-top: 12px;">
+                <div class="card__content" style="text-align: center; font-size: 17px;">Melbourne</div>
+            </div>
+
+            <div class="card">
+                <ons-row>
+                    <ons-col class="card" id="card-box">
+                        <div id="center-card-box">
+                            <img id="menu-pic" src="pic/fast-food.png">
+                            <p id="menu-name">Fast Food</p>
+                        </div>
+                    </ons-col>
+                    <ons-col class="card" id="card-box">
+                        <div>
+                            <div id="center-card-box">
+                                <img id="menu-pic" src="pic/kebab.png">
+                                <p id="menu-name">Kebabs</p>
+                            </div>
+                        </div>
+                    </ons-col>
+                </ons-row>
+                <ons-row>
+                    <ons-col class="card" id="card-box">
+                        <div>
+                            <div id="center-card-box">
+                                <img id="menu-pic" src="pic/chinese.png">
+                                <p id="menu-name">Chinese</p>
+                            </div>
+                        </div>
+                    </ons-col>
+                    <ons-col class="card" id="card-box">
+                        <div>
+                            <div id="center-card-box">
+                                <img id="menu-pic" src="pic/pizza.png">
+                                <p id="menu-name">Pizza</p>
+                            </div>
+                        </div>
+                    </ons-col>
+                </ons-row>
+                <ons-row>
+                    <ons-col class="card" id="card-box">
+                        <div>
+                            <div id="center-card-box">
+                                <img id="menu-pic" src="pic/thai-food.png">
+                                <p id="menu-name">Thai</p>
+                            </div>
+                        </div>
+                    </ons-col>
+                    <ons-col class="card" id="card-box">
+                        <div>
+                            <div id="center-card-box">
+                                <img id="menu-pic" src="pic/diet.png">
+                                <p id="menu-name">Vegeterian</p>
+                            </div>
+                        </div>
+                    </ons-col>
+                </ons-row>
+            </div>
+
+        </ons-page>
+    </template>
+
+    <template id="detail.html">
+        <ons-page id="detail">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button></ons-back-button>
+                </div>
+                <div class="center"></div>
+            </ons-toolbar>
+
+            <!-- 1 -->
+            <div class="card" id="pad-2" onclick="detail();">
+                <ons-col>
+                    <ons-row class="box" id="card-detail">
+                        <div class="row">
+                            <div class="col" id="col-30-center"><img id="pic-store" src="pic/noodles.png"></div>
+                            <div class="col" id="col-40-left">
+                                <p id="name-store">The Noodle</p>
+                                <p id="detail-store">Min Delivery :$25 / <p id="status-store">Open</p>
+                                </p>
+                            </div>
+                            <div class="col" id="col-30-center">
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gray"></i>
+                                <div>
+                                    <p id="detail-store">27 Reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ons-row>
+                </ons-col>
+            </div>
+
+            <!-- 2 -->
+            <div class="card" id="pad-2">
+                <ons-col>
+                    <ons-row class="box" id="card-detail">
+                        <div class="row">
+                            <div class="col" id="col-30-center"><img id="pic-store" src="pic/chicken.png"></div>
+                            <div class="col" id="col-40-left">
+                                <p id="name-store">Fried Chicken</p>
+                                <p id="detail-store">Min Delivery :$45 / <p id="status-store">Open</p>
+                                </p>
+                            </div>
+                            <div class="col" id="col-30-center">
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gray"></i>
+                                <div>
+                                    <p id="detail-store">35 Reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ons-row>
+                </ons-col>
+            </div>
+
+            <!-- 3 -->
+            <div class="card" id="pad-2">
+                <ons-col>
+                    <ons-row class="box" id="card-detail">
+                        <div class="row">
+                            <div class="col" id="col-30-center"><img id="pic-store" src="pic/donut.png"></div>
+                            <div class="col" id="col-40-left">
+                                <p id="name-store">Donuts</p>
+                                <p id="detail-store">Min Delivery :$5 / <p id="status-store">Close</p>
+                                </p>
+                            </div>
+                            <div class="col" id="col-30-center">
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gray"></i>
+                                <div>
+                                    <p id="detail-store">42 Reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ons-row>
+                </ons-col>
+            </div>
+
+            <!-- 4 -->
+            <div class="card" id="pad-2">
+                <ons-col>
+                    <ons-row class="box" id="card-detail">
+                        <div class="row">
+                            <div class="col" id="col-30-center"><img id="pic-store" src="pic/sushi.png"></div>
+                            <div class="col" id="col-40-left">
+                                <p id="name-store">Sushi</p>
+                                <p id="detail-store">Min Delivery :$7 / <p id="status-store">Open</p>
+                                </p>
+                            </div>
+                            <div class="col" id="col-30-center">
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gray"></i>
+                                <div>
+                                    <p id="detail-store">14 Reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ons-row>
+                </ons-col>
+            </div>
+
+            <!-- 5 -->
+            <div class="card" id="pad-2">
+                <ons-col>
+                    <ons-row class="box" id="card-detail">
+                        <div class="row">
+                            <div class="col" id="col-30-center"><img id="pic-store" src="pic/noodles.png"></div>
+                            <div class="col" id="col-40-left">
+                                <p id="name-store">The Noodle</p>
+                                <p id="detail-store">Min Delivery :$25 / <p id="status-store">Open</p>
+                                </p>
+                            </div>
+                            <div class="col" id="col-30-center">
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gray"></i>
+                                <div>
+                                    <p id="detail-store">27 Reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ons-row>
+                </ons-col>
+            </div>
+
+            <!-- 6 -->
+            <div class="card" id="pad-2">
+                <ons-col>
+                    <ons-row class="box" id="card-detail">
+                        <div class="row">
+                            <div class="col" id="col-30-center"><img id="pic-store" src="pic/chicken.png"></div>
+                            <div class="col" id="col-40-left">
+                                <p id="name-store">Fried Chicken</p>
+                                <p id="detail-store">Min Delivery :$45 / <p id="status-store">Open</p>
+                                </p>
+                            </div>
+                            <div class="col" id="col-30-center">
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gray"></i>
+                                <div>
+                                    <p id="detail-store">35 Reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ons-row>
+                </ons-col>
+            </div>
+
+            <!-- 7 -->
+            <div class="card" id="pad-2">
+                <ons-col>
+                    <ons-row class="box" id="card-detail">
+                        <div class="row">
+                            <div class="col" id="col-30-center"><img id="pic-store" src="pic/donut.png"></div>
+                            <div class="col" id="col-40-left">
+                                <p id="name-store">Donuts</p>
+                                <p id="detail-store">Min Delivery :$5 / <p id="status-store">Close</p>
+                                </p>
+                            </div>
+                            <div class="col" id="col-30-center">
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gold"></i>
+                                <i class="fas fa-star" id="gray"></i>
+                                <div>
+                                    <p id="detail-store">24 Reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ons-row>
+                </ons-col>
+            </div>
+
+        </ons-page>
+    </template>
+</body>
+
+<script>
+
+    function logout() {
+        window.location.href = "index.html";
+    }
+
+    function detail() {
+        window.location.href = "detail.html";
+    }
+
+    document.addEventListener('init', function (event) {
+        var page = event.target;
+
+        if (page.id === 'menu') {
+            page.querySelector('#card-box').onclick = function () {
+                document.querySelector('#myNavigator').pushPage('detail.html', { data: { title: '<b>foodfeed</b>' } });
+            };
+        } else if (page.id === 'detail') {
+            page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+        }
+    });
+</script>
+
+</html>

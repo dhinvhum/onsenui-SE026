@@ -1,0 +1,367 @@
+ons-button[modifier="large"] {
+    background: DARKOLIVEGREEN;
+    font-weight: bold;
+}
+
+ons-button[modifier="large2"] {
+    background: ROSYBROWN;
+    font-weight: bold;
+}
+
+ons-button[modifier="material1"] {
+    background: STEELBLUE;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+ons-button[modifier="material2"] {
+    background: INDIANRED;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#login .page__background{
+    background: #16A085; 
+    background: -webkit-linear-gradient(to right, #F4D03F, #16A085);
+    background: linear-gradient(to top left, #F4D03F, #16A085);
+ }
+
+#register .page__background{
+    background: #16A085; 
+    background: -webkit-linear-gradient(to right, #F4D03F, #16A085);
+    background: linear-gradient(to top right, #F4D03F, #16A085);
+
+}
+
+#card-login {
+    background: white; 
+    text-align: center; 
+    margin-top: 30%;
+    padding: 10%;
+}
+
+#login-text {   
+    font-weight: bold;
+    font-size: 35px;
+    margin: 0;
+}
+
+#toolbar-text {
+    font-size: 21px;
+}
+
+ons-input {
+    width: 60% !important;
+  }
+
+#button_box {
+    margin: auto;
+}
+
+.detail {
+    color: rgb(87, 82, 82);
+    font-size: 12px;
+}
+
+
+.link {
+    color: CADETBLUE;
+    font-size: 15px;
+}
+
+#card-box {
+    background: WHEAT;
+}
+
+#menu-pic {
+    width: 80%;
+}
+
+#pic-store {
+    width: 50px;
+}
+
+#center-card-box {
+    text-align: center;
+}
+
+#menu-name {
+    color: IVORY;
+    font-weight: bold;
+    padding-top: 8px;
+    margin: 0;
+}
+
+.row {
+    display: table;
+    width: 100%;
+    padding: 0px;
+    table-layout: fixed;
+}
+
+.col {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#card-detail {
+    margin: 3%;
+    padding: 1%;
+}
+
+#col-30-center {
+    width: 30%;
+    text-align: center;
+}
+
+#col-40-left {
+    width: 40%;
+    text-align: left;
+}
+
+#col-80-left {
+    width: 80%;
+    text-align: left;
+}
+
+#col-10-center {
+    width: 10%;
+    text-align: center;
+}
+
+#col-10 {
+    width: 10%;
+}
+
+#pad-2 {
+    padding-left: 0%;
+    padding-right: 0%
+}
+
+#name-store {
+    margin: 0;
+    font-weight: bold;
+}
+
+#detail-store {
+    margin: 0;
+    display: inline;
+    font-size: 10px;
+}
+
+#status-store {
+    margin: 0;
+    display: inline;
+    font-weight: bold;
+    font-size: 12px;
+    color: brown;
+}
+
+.box {
+    display: contents;
+}
+
+#gold {
+    color: GOLD;
+    font-size: 10px;
+}
+
+#gray {
+    color: Gray;
+    font-size: 10px;
+}
+
+.head-menu {
+    margin: 5px;
+    color: PERU;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#name-menu {
+    margin: 2px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#detail-menu {
+    margin: 2px;
+    font-size: 12px;
+    color: GRAY;
+}
+
+#price-menu {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#button-add {
+    float: right;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+
+    border-radius: 4px;
+    width: 22px;
+    height: 35px;
+    background-color: PERU;
+}
+
+#card-menu {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+#line {
+    margin-top: 16px;
+    height: 1px;
+    width: 100%;
+    background-color: TAN;
+}
+
+#menu-box {
+    padding: 14px;
+    border-radius: 6px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: LIGHTGRAY;
+    height: 32px;
+    width: 85%;
+}
+
+#name-menu-list-left {
+    padding-top: 9px;
+    text-align: left;
+}
+
+#name-menu-list-right {
+    padding-top: 9px;
+    text-align: right;
+}
+
+#name-menu-list {
+    margin: 0;
+    font-weight: bold;
+}
+
+#name-store-payment {
+    margin: 8px;
+    font-weight: bold;
+}
+
+#text-store-payment {
+    margin: 8px;
+    color: DARKGRAY;
+    margin-bottom: 2px;
+    font-size: 15px;
+}
+
+#col-19 {
+    padding: 7px;
+    width: 19%;
+}
+
+#col-15 {
+    padding: 7px;
+    width: 15%;
+}
+
+#col-66 {
+    padding: 7px;
+    width: 66%;
+}
+
+#col-85 {
+    padding: 7px;
+    width: 85%;
+}
+
+#head-table {
+    color: GRAY;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#head-table-rosybrown {
+    color: ROSYBROWN;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#head-table-center {
+    padding: 2px;
+    background-color: ROSYBROWN;
+    color: WHITE;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#head-table-right {
+    color: GRAY;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;
+}
+
+#text-table {
+    margin: 0;
+    font-size: 14px;
+}
+
+#text-table-right {
+    margin: 0;
+    font-size: 14px;
+    text-align: right;
+}
+
+#border-box {
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: TAN;
+}
+
+#text-pay {
+    color: GRAY;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#payment-cc {
+    color: WHITE;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 12px;
+    border-radius: 55px;
+    padding: 6px;
+    width: 55%;
+    background-color: DARKOLIVEGREEN;
+}
+
+#payment-pp {
+    color: WHITE;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 12px;
+    border-radius: 55px;
+    padding: 6px;
+    width: 55%;
+    background-color: ROYALBLUE;
+}
+
+#payment-cd {
+    color: WHITE;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 12px;
+    border-radius: 55px;
+    padding: 6px;
+    width: 55%;
+    background-color: DIMGRAY;
+}

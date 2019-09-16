@@ -1,0 +1,107 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Payment</title>
+
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsen/onsen-css-components.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <ons-page id="menu">
+        <ons-toolbar>
+            <div class="center" id="toolbar-text"><b>foodfeed</b></div>
+            <div class="toolbar__right">
+                <span class="toolbar-button" style="color: MAROON; font-weight: bold;" onclick="logout()">logout</span>
+            </div>
+            <div class="toolbar__left">
+                <span class="toolbar-button" style="color: rgb(24, 92, 53); font-weight: bold;"
+                    onclick="back()">back</span>
+            </div>
+        </ons-toolbar>
+
+        <div class="card" id="pad-2">
+            <ons-col>
+                <ons-row class="box" id="card-detail">
+                    <!-- bar-menu -->
+                    <div class="col">
+                        <div class="row" style="text-align: center;"><img id="pic-store" src="pic/noodles.png"></div>
+                        <div class="row" style="text-align: center;">
+                            <p id="name-store-payment">The Noodle</p>
+                            <p id="text-store-payment">Your Order is Below</p>
+                        </div>
+                    </div>
+
+                    <div id="line"></div>
+
+                    <!-- order list -->
+                    <div class="row">
+                        <div class="col" id="col-19">
+                            <p id="head-table-right">Quantity</p>
+                            <p id="text-table-right">1</p>
+                            <p id="text-table-right">2</p>
+                            <p id="text-table-right">3</p>
+
+                        </div>
+                        <div class="col" id="col-66">
+                            <p id="head-table">Name of Dish</p>
+                            <p id="text-table">Chicken Chowmein</p>
+                            <p id="text-table">Beef Stir Fry</p>
+                            <p id="text-table">Soft Drinks (Coke)</p>
+
+                        </div>
+                        <div class="col" id="col-15">
+                            <p id="head-table">Price</p>
+                            <p id="text-table">$ 30</p>
+                            <p id="text-table">$ 10</p>
+                            <p id="text-table">$ 8.5</p>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col" id="col-85">
+                            <p id="head-table-center">Total Price</p>
+                        </div>
+                        <div class="col" id="col-15">
+                            <p id="head-table-rosybrown">$ 48.5</p>
+                        </div>
+                    </div>
+
+                    <div>
+
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div id="border-box">
+                            <p id="text-pay"> Pay Via </p>
+
+                            <div id="payment-cc">Credit Card</div>
+
+                            <div id="payment-pp">PayPal</div>
+
+                            <div id="payment-cd">Cash on Delivery</div>
+                        </div>
+                    </div>
+    </ons-page>
+</body>
+
+<script>
+
+    function back() {
+        window.location.href = "detail.html";
+    }
+
+    function logout() {
+        window.location.href = "index.html";
+    }
+
+</script>
+
+</html>
