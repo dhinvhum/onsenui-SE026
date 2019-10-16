@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="lib/onsen/onsen-css-components.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <script src="lib/onsen/js/onsenui.js"></script>
-    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
 
 </head>
 
@@ -21,7 +19,8 @@
             <ons-toolbar>
                 <div class="center" id="toolbar-text"><b>foodfeed</b></div>
                 <div class="toolbar__right">
-                    <span class="toolbar-button" style="color: maroon; font-weight: bold;" onclick="logout()">logout</span>
+                    <span class="toolbar-button" style="color: maroon; font-weight: bold;"
+                        onclick="logout()">logout</span>
                 </div>
             </ons-toolbar>
 
@@ -44,60 +43,7 @@
                 <div class="card__content" style="text-align: center; font-size: 17px;">Melbourne</div>
             </div>
 
-            <div class="card">
-                <ons-row>
-                    <ons-col class="card" id="card-box">
-                        <div id="center-card-box">
-                            <img id="menu-pic" src="pic/fast-food.png">
-                            <p id="menu-name">Fast Food</p>
-                        </div>
-                    </ons-col>
-                    <ons-col class="card" id="card-box">
-                        <div>
-                            <div id="center-card-box">
-                                <img id="menu-pic" src="pic/kebab.png">
-                                <p id="menu-name">Kebabs</p>
-                            </div>
-                        </div>
-                    </ons-col>
-                </ons-row>
-                <ons-row>
-                    <ons-col class="card" id="card-box">
-                        <div>
-                            <div id="center-card-box">
-                                <img id="menu-pic" src="pic/chinese.png">
-                                <p id="menu-name">Chinese</p>
-                            </div>
-                        </div>
-                    </ons-col>
-                    <ons-col class="card" id="card-box">
-                        <div>
-                            <div id="center-card-box">
-                                <img id="menu-pic" src="pic/pizza.png">
-                                <p id="menu-name">Pizza</p>
-                            </div>
-                        </div>
-                    </ons-col>
-                </ons-row>
-                <ons-row>
-                    <ons-col class="card" id="card-box">
-                        <div>
-                            <div id="center-card-box">
-                                <img id="menu-pic" src="pic/thai-food.png">
-                                <p id="menu-name">Thai</p>
-                            </div>
-                        </div>
-                    </ons-col>
-                    <ons-col class="card" id="card-box">
-                        <div>
-                            <div id="center-card-box">
-                                <img id="menu-pic" src="pic/diet.png">
-                                <p id="menu-name">Vegeterian</p>
-                            </div>
-                        </div>
-                    </ons-col>
-                </ons-row>
-            </div>
+            <div class="card" id="menu-lists"></div>
 
         </ons-page>
     </template>
@@ -295,29 +241,62 @@
 
         </ons-page>
     </template>
+
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+    <!-- install firebase database -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCURx3P8-FG0wvcSeB2JgngcF2YkinCp8k",
+            authDomain: "food-delivery-a6f01.firebaseapp.com",
+            databaseURL: "https://food-delivery-a6f01.firebaseio.com",
+            projectId: "food-delivery-a6f01",
+            storageBucket: "food-delivery-a6f01.appspot.com",
+            messagingSenderId: "811584891748",
+            appId: "1:811584891748:web:f3cbbb9a397a48be91a871",
+            measurementId: "G-975Q49G4KY"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="lib/js/fireStore.js"></script>
+    <script src="lib/js/model/category.js"></script>
+    <script src="lib/js/model/recommend.js"></script>
+    <script src="lib/js/helper/utilsHelper.js"></script>
+    <script src="lib/js/menu.js"></script>
+    <script>
+
+        function logout() {
+            window.location.href = "index.html";
+        }
+
+        function detail() {
+            window.location.href = "detail.html";
+        }
+
+        document.addEventListener('init', function (event) {
+            var page = event.target;
+
+            if (page.id === 'menu') {
+                page.querySelector('#card-box').onclick = function () {
+                    document.querySelector('#myNavigator').pushPage('detail.html', { data: { title: '<b>foodfeed</b>' } });
+                };
+            } else if (page.id === 'detail') {
+                page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+            }
+        });
+    </script>
 </body>
 
-<script>
-
-    function logout() {
-        window.location.href = "index.html";
-    }
-
-    function detail() {
-        window.location.href = "detail.html";
-    }
-
-    document.addEventListener('init', function (event) {
-        var page = event.target;
-
-        if (page.id === 'menu') {
-            page.querySelector('#card-box').onclick = function () {
-                document.querySelector('#myNavigator').pushPage('detail.html', { data: { title: '<b>foodfeed</b>' } });
-            };
-        } else if (page.id === 'detail') {
-            page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
-        }
-    });
-</script>
 
 </html>
