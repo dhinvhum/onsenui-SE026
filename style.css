@@ -149,11 +149,19 @@ ons-input {
     font-size: 10px;
 }
 
-#status-store {
+
+.store__status {
     margin: 0;
     display: inline;
     font-weight: bold;
     font-size: 12px;
+}
+
+.store__status--success {
+    color: green;
+}
+
+.store__status--danger {
     color: brown;
 }
 
