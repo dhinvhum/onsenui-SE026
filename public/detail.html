@@ -1,0 +1,225 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ordering</title>
+
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsen/onsen-css-components.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <ons-page id="menu">
+        <ons-toolbar>
+            <div class="center" id="toolbar-text"><b>foodfeed</b></div>
+            <div class="toolbar__right">
+                <span class="toolbar-button" style="color: MAROON; font-weight: bold;" onclick="logout()">logout</span>
+            </div>
+            <div class="toolbar__left">
+                <span class="toolbar-button" style="color: rgb(24, 92, 53); font-weight: bold;"
+                    onclick="back()">back</span>
+            </div>
+        </ons-toolbar>
+
+        <div class="card" id="pad-2">
+            <ons-col>
+                <ons-row class="box" id="card-detail">
+                    <!-- bar-menu -->
+                    <div class="row">
+                        <div class="col" id="col-30-center"><img id="pic-store" src="pic/noodles.png"></div>
+                        <div class="col" id="col-40-left">
+                            <p id="name-store">The Noodle</p>
+                            <p id="detail-store">Min Delivery :$25 / <p id="status-store">Open</p>
+                            </p>
+                        </div>
+                        <div class="col" id="col-30-center">
+                            <i class="fas fa-star" id="gold"></i>
+                            <i class="fas fa-star" id="gold"></i>
+                            <i class="fas fa-star" id="gold"></i>
+                            <i class="fas fa-star" id="gold"></i>
+                            <i class="fas fa-star" id="gray"></i>
+                            <div>
+                                <p id="detail-store">27 Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="line"></div>
+
+                    <!-- order list -->
+                    <div id="card-menu">
+                        <P class="head-menu">Starters</P>
+
+                        <!--1  -->
+                        <div class="row">
+                            <div class="col" id="col-80-left">
+                                <p id="name-menu">Chicken Soup</p>
+                                <p id="detail-menu">Served with all salad, sauce and bread</p>
+                            </div>
+                            <div class="col" id="col-10-center">
+                                <p id="price-menu">$12</p>
+                            </div>
+                            <div class="col" id="col-10">
+                                <div id="button-add">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2 -->
+                        <div class="row">
+                            <div class="col" id="col-80-left">
+                                <p id="name-menu">Chicken Chowmein</p>
+                                <p id="detail-menu">Served with all salad, sauce and bread and coke</p>
+                            </div>
+                            <div class="col" id="col-10-center">
+                                <p id="price-menu">$36</p>
+                            </div>
+                            <div class="col" id="col-10">
+                                <div id="button-add">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3-->
+                        <div class="row">
+                            <div class="col" id="col-80-left">
+                                <p id="name-menu">Beef Noodles Guacmole</p>
+                                <p id="detail-menu">Served with chips and sauce</p>
+                            </div>
+                            <div class="col" id="col-10-center">
+                                <p id="price-menu">$12</p>
+                            </div>
+                            <div class="col" id="col-10">
+                                <div id="button-add">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="card-menu">
+                        <P class="head-menu">Mains</P>
+
+                        <!--1  -->
+                        <div class="row">
+                            <div class="col" id="col-80-left">
+                                <p id="name-menu">The Noodle Special Sauce</p>
+                                <p id="detail-menu">Served with all salad, sauce and bread</p>
+                            </div>
+                            <div class="col" id="col-10-center">
+                                <p id="price-menu">$10</p>
+                            </div>
+                            <div class="col" id="col-10">
+                                <div id="button-add">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2 -->
+                        <div class="row">
+                            <div class="col" id="col-80-left">
+                                <p id="name-menu">The Prawn Noodle Bowl</p>
+                                <p id="detail-menu">Served with all salad, sauce and bread and coke</p>
+                            </div>
+                            <div class="col" id="col-10-center">
+                                <p id="price-menu">$8</p>
+                            </div>
+                            <div class="col" id="col-10">
+                                <div id="button-add">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3-->
+                        <div class="row">
+                            <div class="col" id="col-80-left">
+                                <p id="name-menu">Honey Chicken with Fried Rice</p>
+                                <p id="detail-menu">Served with chips and sauce</p>
+                            </div>
+                            <div class="col" id="col-10-center">
+                                <p id="price-menu">$56</p>
+                            </div>
+                            <div class="col" id="col-10">
+                                <div id="button-add">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4-->
+                        <div class="row">
+                            <div class="col" id="col-80-left">
+                                <p id="name-menu">Avocado Beed Chilli and Noodles</p>
+                                <p id="detail-menu">Served with all salad, sauce and bread and coke</p>
+                            </div>
+                            <div class="col" id="col-10-center">
+                                <p id="price-menu">$99</p>
+                            </div>
+                            <div class="col" id="col-10">
+                                <div id="button-add">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="menu-box">
+                        <div class="row">
+                            <div class="col" id="name-menu-list-left">
+                                <p id="name-menu-list">Drinks</p>
+                            </div>
+                            <div class="col" id="name-menu-list-right">
+                                <p id="name-menu-list">+</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="menu-box">
+                        <div class="row">
+                            <div class="col" id="name-menu-list-left">
+                                <p id="name-menu-list">Desserts</p>
+                            </div>
+                            <div class="col" id="name-menu-list-right">
+                                <p id="name-menu-list">+</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </ons-row>
+            </ons-col>
+        </div>
+
+        <div>
+            <div class="bottom-bar__line-height" style="text-align:center; font-weight: bold; background-color: TAN;"
+                onclick="payment()">Order</div>
+        </div>
+
+    </ons-page>
+</body>
+
+<script>
+
+    function back() {
+        window.location.href = "menu.html";
+    }
+
+    function logout() {
+        window.location.href = "index.html";
+    }
+
+    function payment() {
+        window.location.href = "payment.html";
+    }
+
+</script>
+
+</html>

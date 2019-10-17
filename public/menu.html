@@ -1,0 +1,147 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Categories</title>
+
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsen/onsen-css-components.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <ons-navigator swipeable id="myNavigator" page="menu.html"></ons-navigator>
+
+    <template id="menu.html">
+        <ons-page id="menu">
+            <ons-toolbar>
+                <div class="center" id="toolbar-text"><b>foodfeed</b></div>
+                <div class="toolbar__right">
+                    <span class="toolbar-button" style="color: maroon; font-weight: bold;"
+                        onclick="logout()">logout</span>
+                </div>
+            </ons-toolbar>
+
+            <div style="padding-top: 12px; text-align: center;">
+                <a style="padding: 12px;"><label class="radio-button radio-button--material">
+                        <input type="radio" class="radio-button__input radio-button--material__input" name="r"
+                            checked="checked">
+                        <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                        Delivery
+                    </label></a>
+
+                <a style="padding: 12px;"><label class="radio-button radio-button--material">
+                        <input type="radio" class="radio-button__input radio-button--material__input" name="r">
+                        <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                        Pickup
+                    </label></a>
+            </div>
+
+            <div class="card" style="padding: 3px; margin-top: 12px;">
+                <div class="card__content" style="text-align: center; font-size: 17px;">Melbourne</div>
+            </div>
+
+            <div class="card" id="category-lists"></div>
+        </ons-page>
+    </template>
+
+    <template id="detail.html">
+        <ons-page id="detail">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button></ons-back-button>
+                </div>
+                <div class="center"></div>
+            </ons-toolbar>
+
+            <!-- 1 -->
+            <div id="store-lists">
+                    <!-- <div class="card" id="pad-2" onclick="detail();">
+                        <ons-row class="box" id="card-detail">
+                            <div class="row">
+                                <div class="col" id="col-30-center"><img id="pic-store" src=""></div>
+                                <div class="col" id="col-40-left">
+                                    <p id="name-store">The Noodle</p>
+                                    <p id="detail-store">Min Delivery :$25 / <p id="status-store">Open</p>
+                                    </p>
+                                </div>
+                                <div class="col" id="col-30-center">
+                                    <i class="fas fa-star" id="gold"></i>
+                                    <i class="fas fa-star" id="gold"></i>
+                                    <i class="fas fa-star" id="gold"></i>
+                                    <i class="fas fa-star" id="gold"></i>
+                                    <i class="fas fa-star" id="gray"></i>
+                                    <div>
+                                        <p id="detail-store">27 Reviews</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ons-row>
+                    </div> -->
+
+                
+            </div>
+        </ons-page>
+    </template>
+
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+    <!-- install firebase database -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCURx3P8-FG0wvcSeB2JgngcF2YkinCp8k",
+            authDomain: "food-delivery-a6f01.firebaseapp.com",
+            databaseURL: "https://food-delivery-a6f01.firebaseio.com",
+            projectId: "food-delivery-a6f01",
+            storageBucket: "food-delivery-a6f01.appspot.com",
+            messagingSenderId: "811584891748",
+            appId: "1:811584891748:web:f3cbbb9a397a48be91a871",
+            measurementId: "G-975Q49G4KY"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="lib/js/fireStore.js"></script>
+    <script src="lib/js/model/category.js"></script>
+    <script src="lib/js/model/recommend.js"></script>
+    <script src="lib/js/model/store.js"></script>
+    <script src="lib/js/helper/utilsHelper.js"></script>
+    <script src="lib/js/menu.js"></script>
+    
+ 
+    <script>
+
+        function logout() {
+            window.location.href = "index.html";
+        }
+
+        function detail() {
+            window.location.href = "detail.html";
+        }
+
+        document.addEventListener('init', function (event) {
+            var page = event.target;
+
+            if (page.id === 'menu') {
+
+            } else if (page.id === 'detail') {
+                page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+            }
+        });
+    </script>
+</body>
+
+
+</html>

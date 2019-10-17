@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsen/onsen-css-components.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.2.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.2.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.2.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.2.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.2.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+      
+      }
+    </style>
+  </head>
+  <body>
+      <ons-navigator swipeable id="myNavigator" page="login.html"></ons-navigator>
+
+      <template id="login.html">
+          <ons-page id="login">
+              <div class="card" id="card-login">
+                  <section>
+                      <div>
+                          <h2 id="login-text">Login</h2>
+                          <p class="detail">Insert your email and password to login</p>
+                      </div>
+                      <div style="padding: 5px;">
+                          <p>
+                              <ons-input id="e-mail" modifier="underbar" type="e-mail" placeholder="E-mail" float></ons-input>
+                          </p>
+                          <p>
+                              <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float>
+                              </ons-input>
+                          </p>
+                      </div>
+                  </section>
+                  <div id="button_box" style="padding: 4px; width: 70%; margin-top: 2%;">
+                      <ons-button modifier="large" onclick="validate()">LOGIN</ons-button>
+                  </div>
+              </div>
+  
+              <p class="detail" style="text-align: center">-- or --</p>
+  
+              <div class="card">
+                  <div class="container" style=" padding-left: 10%; padding-right: 10%;">
+                      <section style="text-align: center;">
+                          <ons-button modifier="material1" onclick="callmenu()">facebook</ons-button>
+                          <ons-button modifier="material2" onclick="callmenu()">g-mail</ons-button>
+                      </section>
+  
+                      <p style="padding-top: 12px; margin: 0; text-align: center;"><a class="link" id="push-button">create
+                              <b>new account</b></a>
+                      </p>
+                  </div>
+              </div>
+          </ons-page>
+      </template>
+  
+      <template id="register.html">
+          <ons-page id="register">
+              <div class="card" id="card-login">
+                  <section>
+                      <div>
+                          <h2 id="login-text">Register</h2>
+                          <p class="detail">registering an account, you accept all terms and conditions</p>
+                      </div>
+                      <div style="padding: 5px;">
+                          <p>
+                              <ons-input id="Rname" modifier="underbar" placeholder="Full Name" float></ons-input>
+                          </p>
+                          <p>
+                              <ons-input id="Re-mail" modifier="underbar" type="e-mail" placeholder="Email Address" float>
+                              </ons-input>
+                          </p>
+                          <p>
+                              <ons-input id="Rphone" modifier="underbar" type="phone" placeholder="Phone Number" float>
+                              </ons-input>
+                          </p>
+                          <p>
+                              <ons-input id="Rpassword" modifier="underbar" type="password" placeholder="Password" float>
+                              </ons-input>
+                          </p>
+                      </div>
+                  </section>
+                  <div id="button_box" style="padding: 4px; width: 70%; margin-top: 2%;">
+                      <ons-button modifier="large2" onclick="validate2()">REGISTER</ons-button>
+                  </div>
+                  <p style="padding-top: 12px; margin: 0; text-align: center;"><a class="link" id="back-button">back to
+                          <b>login</b></a>
+              </div>
+  
+          </ons-page>
+      </template>
+
+
+
+
+
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+
+<script>
+
+    //check login
+    function validate() {
+        var email = document.getElementById("e-mail").value;
+        var password = document.getElementById("password").value;
+
+        if (email !== "" && password !== "") {
+            callmenu();
+        } else {
+            ons.notification.alert('Try Again');
+        }
+    }
+
+    //check Register
+    function validate2() {
+        var name = document.getElementById("Rname").value;
+        var email = document.getElementById("Re-mail").value;
+        var phone = document.getElementById("Rphone").value;
+        var password = document.getElementById("Rpassword").value;
+
+        if (name !== "" && email !== "" && phone !== "" && password !== "") {
+            callmenu();
+        } else {
+            ons.notification.alert('Filled Information');
+        }
+    }
+
+    //go to menu
+    function callmenu() {
+        window.location.href = "menu.html";
+    }
+
+    //swift page
+    document.addEventListener('init', function (event) {
+        var page = event.target;
+
+        if (page.id === 'login') {
+            page.querySelector('#push-button').onclick = function () {
+                document.querySelector('#myNavigator').pushPage('register.html');
+            };
+        } else if (page.id === 'register') {
+            page.querySelector('#back-button').onclick = function () {
+                document.querySelector('#myNavigator').pushPage('login.html');
+            };
+        }
+    });
+</script>
+
+  </body>
+
+</html>
