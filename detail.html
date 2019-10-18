@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="lib/onsen/onsen-css-components.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <script src="lib/onsen/js/onsenui.js"></script>
-    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+
 
 </head>
 
@@ -26,176 +25,87 @@
             </div>
         </ons-toolbar>
 
+        <div id="store-list"></div>
         <div class="card" id="pad-2">
-            <ons-col>
-                <ons-row class="box" id="card-detail">
-                    <!-- bar-menu -->
+
+            <ons-row class="box" id="card-detail">
+                <!-- bar-menu -->
+                <div class="row">
+                    <div class="col" id="col-30-center"><img id="pic-store" src="pic/noodles.png"></div>
+                    <div class="col" id="col-40-left">
+                        <p id="name-store">The Noodle</p>
+                        <p id="detail-store">Min Delivery :$25 / <p id="status-store">Open</p>
+                        </p>
+                    </div>
+                    <div class="col" id="col-30-center">
+                        <i class="fas fa-star" id="gold"></i>
+                        <i class="fas fa-star" id="gold"></i>
+                        <i class="fas fa-star" id="gold"></i>
+                        <i class="fas fa-star" id="gold"></i>
+                        <i class="fas fa-star" id="gray"></i>
+                        <div>
+                            <p id="detail-store">27 Reviews</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="line"></div>
+
+                <!-- order list -->
+                <div id="card-menu">
+                    <P class="head-menu">Starters</P>
+
+                    <!--1  -->
                     <div class="row">
-                        <div class="col" id="col-30-center"><img id="pic-store" src="pic/noodles.png"></div>
-                        <div class="col" id="col-40-left">
-                            <p id="name-store">The Noodle</p>
-                            <p id="detail-store">Min Delivery :$25 / <p id="status-store">Open</p>
-                            </p>
+                        <div class="col" id="col-80-left">
+                            <p id="name-menu">Chicken Soup</p>
+                            <p id="detail-menu">Served with all salad, sauce and bread</p>
                         </div>
-                        <div class="col" id="col-30-center">
-                            <i class="fas fa-star" id="gold"></i>
-                            <i class="fas fa-star" id="gold"></i>
-                            <i class="fas fa-star" id="gold"></i>
-                            <i class="fas fa-star" id="gold"></i>
-                            <i class="fas fa-star" id="gray"></i>
-                            <div>
-                                <p id="detail-store">27 Reviews</p>
-                            </div>
+                        <div class="col" id="col-10-center">
+                            <p id="price-menu">$12</p>
                         </div>
-                    </div>
-                    <div id="line"></div>
-
-                    <!-- order list -->
-                    <div id="card-menu">
-                        <P class="head-menu">Starters</P>
-
-                        <!--1  -->
-                        <div class="row">
-                            <div class="col" id="col-80-left">
-                                <p id="name-menu">Chicken Soup</p>
-                                <p id="detail-menu">Served with all salad, sauce and bread</p>
-                            </div>
-                            <div class="col" id="col-10-center">
-                                <p id="price-menu">$12</p>
-                            </div>
-                            <div class="col" id="col-10">
-                                <div id="button-add">
-                                    +
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 2 -->
-                        <div class="row">
-                            <div class="col" id="col-80-left">
-                                <p id="name-menu">Chicken Chowmein</p>
-                                <p id="detail-menu">Served with all salad, sauce and bread and coke</p>
-                            </div>
-                            <div class="col" id="col-10-center">
-                                <p id="price-menu">$36</p>
-                            </div>
-                            <div class="col" id="col-10">
-                                <div id="button-add">
-                                    +
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 3-->
-                        <div class="row">
-                            <div class="col" id="col-80-left">
-                                <p id="name-menu">Beef Noodles Guacmole</p>
-                                <p id="detail-menu">Served with chips and sauce</p>
-                            </div>
-                            <div class="col" id="col-10-center">
-                                <p id="price-menu">$12</p>
-                            </div>
-                            <div class="col" id="col-10">
-                                <div id="button-add">
-                                    +
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div id="card-menu">
-                        <P class="head-menu">Mains</P>
-
-                        <!--1  -->
-                        <div class="row">
-                            <div class="col" id="col-80-left">
-                                <p id="name-menu">The Noodle Special Sauce</p>
-                                <p id="detail-menu">Served with all salad, sauce and bread</p>
-                            </div>
-                            <div class="col" id="col-10-center">
-                                <p id="price-menu">$10</p>
-                            </div>
-                            <div class="col" id="col-10">
-                                <div id="button-add">
-                                    +
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 2 -->
-                        <div class="row">
-                            <div class="col" id="col-80-left">
-                                <p id="name-menu">The Prawn Noodle Bowl</p>
-                                <p id="detail-menu">Served with all salad, sauce and bread and coke</p>
-                            </div>
-                            <div class="col" id="col-10-center">
-                                <p id="price-menu">$8</p>
-                            </div>
-                            <div class="col" id="col-10">
-                                <div id="button-add">
-                                    +
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 3-->
-                        <div class="row">
-                            <div class="col" id="col-80-left">
-                                <p id="name-menu">Honey Chicken with Fried Rice</p>
-                                <p id="detail-menu">Served with chips and sauce</p>
-                            </div>
-                            <div class="col" id="col-10-center">
-                                <p id="price-menu">$56</p>
-                            </div>
-                            <div class="col" id="col-10">
-                                <div id="button-add">
-                                    +
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 4-->
-                        <div class="row">
-                            <div class="col" id="col-80-left">
-                                <p id="name-menu">Avocado Beed Chilli and Noodles</p>
-                                <p id="detail-menu">Served with all salad, sauce and bread and coke</p>
-                            </div>
-                            <div class="col" id="col-10-center">
-                                <p id="price-menu">$99</p>
-                            </div>
-                            <div class="col" id="col-10">
-                                <div id="button-add">
-                                    +
-                                </div>
+                        <div class="col" id="col-10">
+                            <div id="button-add">
+                                +
                             </div>
                         </div>
                     </div>
 
-                    <div id="menu-box">
-                        <div class="row">
-                            <div class="col" id="name-menu-list-left">
-                                <p id="name-menu-list">Drinks</p>
-                            </div>
-                            <div class="col" id="name-menu-list-right">
-                                <p id="name-menu-list">+</p>
+                    <!-- 2 -->
+                    <div class="row">
+                        <div class="col" id="col-80-left">
+                            <p id="name-menu">Chicken Chowmein</p>
+                            <p id="detail-menu">Served with all salad, sauce and bread and coke</p>
+                        </div>
+                        <div class="col" id="col-10-center">
+                            <p id="price-menu">$36</p>
+                        </div>
+                        <div class="col" id="col-10">
+                            <div id="button-add">
+                                +
                             </div>
                         </div>
                     </div>
 
-                    <div id="menu-box">
-                        <div class="row">
-                            <div class="col" id="name-menu-list-left">
-                                <p id="name-menu-list">Desserts</p>
-                            </div>
-                            <div class="col" id="name-menu-list-right">
-                                <p id="name-menu-list">+</p>
+                    <!-- 3-->
+                    <div class="row">
+                        <div class="col" id="col-80-left">
+                            <p id="name-menu">Beef Noodles Guacmole</p>
+                            <p id="detail-menu">Served with chips and sauce</p>
+                        </div>
+                        <div class="col" id="col-10-center">
+                            <p id="price-menu">$12</p>
+                        </div>
+                        <div class="col" id="col-10">
+                            <div id="button-add">
+                                +
                             </div>
                         </div>
                     </div>
 
-                </ons-row>
-            </ons-col>
+                </div>
+            </ons-row>
+
         </div>
 
         <div>
@@ -204,22 +114,56 @@
         </div>
 
     </ons-page>
+
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+    <!-- install firebase database -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCURx3P8-FG0wvcSeB2JgngcF2YkinCp8k",
+            authDomain: "food-delivery-a6f01.firebaseapp.com",
+            databaseURL: "https://food-delivery-a6f01.firebaseio.com",
+            projectId: "food-delivery-a6f01",
+            storageBucket: "food-delivery-a6f01.appspot.com",
+            messagingSenderId: "811584891748",
+            appId: "1:811584891748:web:f3cbbb9a397a48be91a871",
+            measurementId: "G-975Q49G4KY"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="lib/js/fireStore.js"></script>
+    <script src="lib/js/model/recommend.js"></script>
+    <script src="lib/js/model/store.js"></script>
+    <script src="lib/js/detail.js"></script>
+
+    <script>
+
+        function back() {
+            window.location.href = "menu.html";
+        }
+
+        function logout() {
+            window.location.href = "menu.html";
+        }
+
+        function payment() {
+            window.location.href = "payment.html";
+        }
+
+    </script>
+
 </body>
-
-<script>
-
-    function back() {
-        window.location.href = "menu.html";
-    }
-
-    function logout() {
-        window.location.href = "index.html";
-    }
-
-    function payment() {
-        window.location.href = "payment.html";
-    }
-
-</script>
 
 </html>
